@@ -9,7 +9,7 @@ require_once "config.php";
 $username = $password = "";
 $username_err = $password_err = "";
  
-// Processing form data when form is submitted
+// Processing form data
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
@@ -28,11 +28,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
-        // Prepare a select statement
+        // SQL...
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
         
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
+        if($stmt = mysqli_prepare($link, $sql))
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             
             // Set parameters
