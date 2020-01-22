@@ -1,5 +1,6 @@
 <?php
 
+//set var
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'asjh23*HN**D');
